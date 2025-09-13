@@ -1,0 +1,3 @@
+During this lab, I faced several errors, such as invalid JSON input in Postman, missing .env variables that caused the secretOrPrivateKey must have a value error, and Cannot GET /api/auth/profile because routes were not mounted correctly. 
+Another issue was forgetting to import the middleware properly, which caused crashes in the server. Through debugging, I learned the importance of carefully checking imports, mounting routes, and using environment variables securely. 
+Overall, this activity taught me how JWT authentication works, how bcrypt secures passwords, and how middleware acts as a gatekeeper in Express.
