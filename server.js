@@ -4,6 +4,7 @@ const port = 3000
 require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
+const reportRoutes = require('./routes/reportRoutes');
 
 app.use(express.json());
 app.use('/auth', authRoutes);
@@ -12,6 +13,7 @@ app.use('/auth', authRoutes);
 const db = require('./config/db')
 
 app.use("/api/auth", authRoutes);
+app.use('/api/reports', reportRoutes);
 
 app.get('/api/health', (req, res) => {
     const dbStatus = db && db.threadId ? 'connected' : 'initialized';

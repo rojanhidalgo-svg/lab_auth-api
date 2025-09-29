@@ -13,7 +13,7 @@ function generateToken(user) {
       jti
     },
     process.env.JWT_SECRET,
-    { expiresIn: '1h' }
+    { expiresIn: '2h' }
   );
   return { token, jti };
 }
@@ -38,7 +38,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const [rows] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
+    const [rows] = await db.query('SELECT id, email, password_hash FROM users WHERE email = ?', [email]);
 
     if (rows.length === 0) return res.status(400).json({ message: 'User not found' });
 
